@@ -1,0 +1,93 @@
+{% extends 'layout.twig' %}
+{% block title %}PHPHint | Analysis Results{% endblock %}
+
+{% block body %}
+{% include 'navigation.twig' %}
+
+<div class="container">
+    <div class="editor">
+        <form action="" method="POST" id="form">
+            {% if syntaxErrors %}
+            <div class="alert alert-error">
+                <p><strong>Oops!</strong> We found a syntax error in your code: {{ syntaxErrors }}</p>
+            </div>
+            {% endif %}
+
+            {% if styleErrors and syntaxErrors is null %}
+            <div class="alert">
+                <p><strong>Oops!</strong> Your code works fine, but there are some problems related to coding standards. The defacto standard of the PHP community is the PSR-0, PSR-1 and PSR-2 standards. Please, see <a href="http://www.php-fig.org/">PHP-FIG</a> for more information on those standards!</p>
+                <p>Check the report below to fix your code manually and understand the necessary changes. If you're feeling lazy, click "Clean" so we can try to automatically fix your code.</p>
+            </div>
+            {% endif %}
+
+            {% if styleErrors is null and syntaxErrors is null %}
+            <div class="alert alert-success">
+                <p><strong>Yay!</strong> Your code works and smells just fine! Keep doing a good job, mate.</p>
+            </div>
+            {% endif %}
+
+            <textarea id="code" name="code">{{ code }}</textarea>
+
+            <div class="toolbar">
+                <input type="button" id="analyze" value="Analyze again" class="btn primary" />
+                <input type="button" id="clean" value="Clean" class="btn primary" />
+            </div>
+        </form>
+    </div>
+    {% if syntaxErrors is null %}
+    <hr />
+    <div class="report">
+        <h2>Statistics</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Stat</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for stat,value in statistics %}
+                <tr>
+                    <td width="60%">
+                        {{ stat }}
+                    </td>
+                    <td width="40%">
+                        {{ value }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% if styleErrors %}
+        <h2>Problems related to coding standards</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Line</th>
+                    <th>Column</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for error in styleErrors %}
+                <tr>
+                    <td width="3%">
+                        {{ error.line }}
+                    </td>
+                    <td width="3%">
+                        {{ error.column }}
+                    </td>
+                    <td width="94%">
+                        {{ error.message }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% include 'footer.twig' %}
+</div>
+{% endblock %}

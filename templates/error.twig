@@ -1,0 +1,14 @@
+{% extends 'layout.twig' %}
+{% block title %}PHPHint | An error has occurred!{% endblock %}
+
+{% block body %}
+{% include 'navigation.twig' %}
+
+<div class="container">
+    <div class="alert alert-error">
+        <p><strong>Oops!</strong> {{ message }}</p>
+    </div>
+    <hr />
+    {% include 'footer.twig' %}
+</div>
+{% endblock %}

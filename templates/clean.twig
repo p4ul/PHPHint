@@ -1,0 +1,20 @@
+{% extends 'layout.twig' %}
+{% block title %}PHPHint | Cleaning Results{% endblock %}
+
+{% block body %}
+{% include 'navigation.twig' %}
+
+<div class="container">
+    <div class="editor">
+        <form action="" method="POST" id="form">
+            <div class="alert alert-success">
+                <p><strong>Success!</strong> Your code has been cleaned and adapted to the PSR-0, PSR-1 and PSR-2 standards!</p>
+            </div>
+
+            <textarea id="code" name="code">{{ code }}</textarea>
+        </form>
+    </div>
+    <hr />
+    {% include 'footer.twig' %}
+</div>
+{% endblock %}

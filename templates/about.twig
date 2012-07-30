@@ -1,0 +1,35 @@
+{% extends 'layout.twig' %}
+{% block title %}About PHPHint{% endblock %}
+
+{% block body %}
+{% include 'navigation.twig' %}
+
+<div class="container">
+    <div class="row">
+        <div class="span4">
+            <h2>About PHPHint</h2>
+             <p>PHPHint is a community-driven, quick and easy to use, online tool that analyzes your PHP code and looks for potential errors, lack of <a href="http://paul-m-jones.com/archives/2420">best practices</a> and <a href="http://en.wikipedia.org/wiki/Code_smell">code smell</a>. It also allows you to clean your code <em>automagically</em>.</p>
+             <p>It was created to spread the work about the <a href="http://paul-m-jones.com/archives/2420">PSR standards</a> and the <a href="http://www.php-fig.org/">PHP-FIG group</a>, the importance of getting rid of code smell and applying to standards.</p>
+        </div>
+        <div class="span4">
+            <h2>How it works</h2>
+            <p>PHPHint only works because of other great open-source projects made by the brightest of the PHP community. It is a frontend (but also could be called a mashup) to:</p>
+            <ul>
+                <li><a href="http://pear.php.net/package/PHP_CodeSniffer">PHP_CodeSniffer</a>, by Greg Sherwood</li>
+                <li><a href="http://cs.sensiolabs.org/">PHP-CS-Fixer</a>, by Fabien Potencier</li>
+                <li><a href="https://github.com/sebastianbergmann/phploc">phploc</a>, by Sebastian Bergmann</li>
+                <li><a href="http://phpmd.org/">PHPMD</a>, by Manuel Pichler</li>
+                <li><a href="http://pdepend.org/">PHP_Depend</a>, by Manuel Pichler</li>
+            </ul>
+            <p>Also, the pretty editor is powered by <a href="http://codemirror.net/">CodeMirror</a> and the interface by <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>. PHPHint is free and open source software, built on top of awesome free and open source software. If you enjoy using this, please, consider <a href="https://my.fsf.org/donate/">donating to the Free Software Foundation</a> or even <a href="http://www.fsf.org/register_form?referrer=10880">joining as a member</a>!</p>
+     </div>
+        <div class="span4">
+            <h2>Contributors</h2>
+            <p>This is a list of developers who have contributed to PHPHint and made it better. Thank you! :)</p>
+            <div id="contributors"></div>
+        </div>
+    </div>
+    <hr />
+    {% include 'footer.twig' %}
+</div>
+{% endblock %}

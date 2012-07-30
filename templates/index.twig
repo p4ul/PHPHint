@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %}
+{% block title %}PHPHint | code quality tool{% endblock %}
+
+{% block body %}
+{% include 'navigation.twig' %}
+
+<div class="container">
+    <div class="editor">
+        <form action="" method="POST" id="form">
+            <div class="alert alert-info">
+                <p><strong>PHPHint</strong> is a quick and easy tool that analyzes your PHP code and looks for potential errors, lack of <a href="http://paul-m-jones.com/archives/2420">best practices</a> and <a href="http://en.wikipedia.org/wiki/Code_smell">code smell</a>. It also allows you to clean your code <em>automagically</em>.</p>
+            </div>
+
+            <textarea id="code" name="code">// Your code here</textarea>
+
+            <div class="toolbar">
+                <input type="button" id="analyze" value="Analyze" class="btn primary" />
+                <input type="button" id="clean" value="Clean" class="btn primary" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    {% include 'footer.twig' %}
+</div>
+{% endblock %}
