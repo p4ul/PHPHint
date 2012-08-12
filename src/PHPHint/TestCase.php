@@ -9,7 +9,7 @@ class TestCase
     public function __construct($code)
     {
         if (strstr($code, '<?php') === false) {
-            throw new \RuntimeException('No PHP code detected!');
+            throw new \RuntimeException('No PHP code detected! Maybe you forgot to include the opening PHP-Tag "<?php"?');
         }
 
         $rand = uniqid();
