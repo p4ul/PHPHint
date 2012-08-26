@@ -22,4 +22,4 @@ PHPHint only works because of other great open-source projects made by the brigh
 * refactor the whole thing, it was made in one night of pure coffee frenzy
 
 ## What it won't do
-PHPHint was created to be quick and easy to use, helping spread the word about code smells and helping people follow the PSR standards. It won't fix or check your entire codebase, that's not the objective. Quick, easy, single-file analysis is the objective. If you want to run PHPHint on a project, just use the tools and power PHPHint! They were made for that.
+PHPHint was created to be quick and easy to use, helping spread the word about code smells and helping people follow the PSR standards. It won't fix or check your entire codebase, that's not the objective. Quick, easy, single-file analysis is the objective. If you want to run PHPHint on a project, just use the tools that power PHPHint! They were made for that.
